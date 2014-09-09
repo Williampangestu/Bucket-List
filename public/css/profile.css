@@ -1,0 +1,128 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.fa-check-square-o{
+  color: red;
+}
+
+.goals {
+  background: url(../images/paper.jpg) no-repeat;
+  float: left;
+  background-size: 100% 100%;
+  margin-left: 3%;
+  margin-top: 2%;
+  border: 2px solid black;
+  border-radius: 8px;
+  width: 45%;
+  height: 800px;
+  padding-left: 2%;
+  padding-right: 3%;
+  font-family: 'Indie Flower', cursive;
+}
+
+#my_goals {
+  font-size: 70px;
+  text-align: center;
+  margin-top: 3%;
+}
+
+.goals ul {
+  list-style-type: none;
+  margin-left: -2%;
+  font-size: 30px;
+}
+
+.profile_content {
+  display: inline-block;
+}
+
+.new {
+  /*border: 2px solid black;*/
+  height: 800px;
+  width: 40%;
+  margin-left: 3%;
+  margin-top: 2%;
+  padding: 0%;
+}
+
+.username{
+  text-align: center;
+  font-family: 'Chewy', cursive;
+  font-size: 60px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.info ul {
+  list-style-type: none;
+  width: 100%;
+  display: inline-block;
+  padding: 2%;
+  border-radius: 5px;
+}
+
+.info ul li {
+  display: inline-block;
+  /*border: 2px solid black;*/
+  width: 16%;
+  padding-left: 2%;
+  padding-right: 2%;
+  margin-left: 2%;
+  text-align: center;
+  border-radius: 5px;
+  border: 3px solid #000000;
+/*  border: 3px solid #000000;*/
+  background-color: #33ADFF;
+  font-size: 21px;
+  font-family: 'Chewy', cursive;
+  color: #000000;
+
+}
+
+.add {
+  margin-top: 4%;
+  margin-left: 42%;
+  margin-bottom: 4%;
+  padding: 1.5%;
+  background-color: #FFFFFF;
+  background-color: #33ADFF;
+  font-size: 22px;
+  font-family: 'Chewy', cursive;
+  border: 3px solid #000000;
+  border-radius: 5px;
+}
+
+.newgoal {
+  margin-top: 3%;
+  width: 90%;
+  margin-left: 6.5%;
+  /*border: 1px solid black;*/
+
+}
+
+.newgoal input[type=text]{
+ border: 2px solid black;
+ font-size: 20px;
+ width: 95%;
+ font-family: 'Chewy', cursive;
+ text-align: center;
+ margin-bottom: 2.5%
+}
+
+.newgoal input[type=submit]{
+ font-family: 'Chewy', cursive;
+ font-size: 18px;
+ text-align: center;
+ margin-left: 44%;
+ background-color: #33ADFF;
+ border: 2px solid black;
+ padding: 1.5%;
+ color: #000000;
+}
+
+.done {
+  text-align: center;
+  font-family: 'Chewy', cursive;
+}
