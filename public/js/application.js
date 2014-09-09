@@ -1,7 +1,39 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  function bindEvents() {
+    $(".like").on("click", incrementLike)
+    $(".join").on("click", incrementParticipant)
+  }
+
+  function incrementLike(event) {
+    event.preventDefault();
+    var id = $(this).parents('div').eq(1).attr('id')
+    $.ajax({
+      url: '/goals/'+id+'/likes',
+      type: 'post'
+    })
+    .done(function(data){
+      debugger
+    })
+    .fail(function(){
+      console.log("You Failed!")
+    })
+  }
+
+  function incrementParticipant(event) {
+    event.preventDefault();
+    var id = $(this).parents('div').eq(1).attr('id')
+    $.ajax({
+      url: '/goals/'+id+'/participants',
+      type: 'post'
+    })
+    .done(function(data){
+      debugger
+    })
+    .fail(function(){
+      console.log("You Failed!")
+    })
+  }
+
+  bindEvents();
 });

@@ -19,7 +19,7 @@
   font-family: 'Racing Sans One', cursive;
 }
 
-#sign_out {
+#sign_out input[type=submit] {
   border-radius: 5px;
   padding: 7px;
   font-family: 'Lobster', cursive;
@@ -74,11 +74,11 @@
 .container {
   border: 3px solid black;
   background-color: #F7F7F7;
-  height: 560px;
+  height: 565px;
   width: 620px;
   margin-left: 0%;
   margin-right: 3.0%;
-  margin-bottom: 7%;
+  margin-bottom: 8%;
   display: inline-block;
 }
 
@@ -90,8 +90,9 @@
   margin-top: 0%;
   margin-bottom: 3%;
   text-align: center;
-  font-family: 'Changa One', cursive;
-  font-size: 40px;
+  font-family: 'Permanent Marker', cursive;
+
+  font-size: 33px;
   color: #000000;
 }
 

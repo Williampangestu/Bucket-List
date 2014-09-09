@@ -1,0 +1,11 @@
+<div class="navcontainer">
+  <ul>
+    <li><h1 id="logo"><i class="fa fa-bitbucket"></i> DREAM BUCKET</h1></li>
+    <li><a href="/users/<%=user.id%>/profile"><button id="user"><i class="fa fa-user"></i></button></a></li>
+    <li><a href="/users/<%=user.id%>"><button id="home"><i class="fa fa-home"></i></button></a></li>
+    <li>
+      <form id="sign_out" action="/users/<%=user.id%>/delete" method="post">
+        <input type="submit", value="SIGN OUT">
+    </li>
+  </ul>
+</div>

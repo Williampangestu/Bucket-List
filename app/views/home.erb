@@ -1,11 +1,4 @@
-<div class="navcontainer">
-  <ul>
-    <li><h1 id="logo"><i class="fa fa-bitbucket"></i> DREAM BUCKET</h1></li>
-    <li><button id="user"><i class="fa fa-user"></i> WILLIAM</button></li>
-    <li><button id="home"><i class="fa fa-home"></i></button></li>
-    <li><button id ="sign_out">SIGN OUT</button></li>
-  </ul>
-</div>
+<%=erb :_navbar, locals: {user: @user}%>
 
 <div class="navbar">
   <h1 id="trending" ><i class="fa fa-line-chart"></i>  TRENDING</h1>
@@ -13,163 +6,19 @@
 
 <div class="content">
 
-  <div class="container">
-    <div class="list" style="background-image: url(http://i.imgur.com/ycmGseV.png)"></div>
-    <p class="text">Visit Horse Shoe Bend</p>
-    <p class="name"><i class="fa fa-user"></i> Joy</p>
-    <div class ="button">
-      <ul>
-        <li><button class="like"><i class="fa fa-thumbs-up"></i> 29 LIKE</button></li>
-        <li><button class="join"><i class="fa fa-child"></i> JOIN</button></li>
-        <li><p>16 People Are Going</p></li>
-      </ul>
+  <%@goal.each do |goal|%>
+    <div id="<%=goal.id%>" class="container">
+      <div class="list" style="background-image: url(<%=goal.picture%>)"></div>
+      <p class="text"><%=goal.title%></p>
+      <p class="name"><i class="fa fa-user"></i> <%=goal.creator%></p>
+      <div class ="button">
+        <ul>
+          <li><button class="like"><i class="fa fa-thumbs-up"></i> <%=goal.likes%></button></li>
+          <li><button class="join"><i class="fa fa-child"></i> JOIN</button></li>
+          <li><p><%=goal.users.count%> People Are Going</p></li>
+        </ul>
+      </div>
     </div>
-  </div>
-
-   <div class="container">
-    <div class="list" style="background-image: url(http://images.huffingtonpost.com/2013-09-10-ScreenShot20130910at3.54.36PM.png)"></div>
-    <p class="text">Go To Burning Man Festival</p>
-    <p class="name"><i class="fa fa-user"></i> Miley</p>
-    <div class ="button">
-      <ul>
-        <li><button class="like"><i class="fa fa-thumbs-up"></i> 22 LIKE</button></li>
-        <li><button class="join"><i class="fa fa-child"></i> JOIN</button></li>
-        <li><p>14 People Are Going</p></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="list" style="background-image: url(http://i.imgur.com/7j9af1j.jpg)"></div>
-    <p class="text">Stargaze At Joshua Tree Park</p>
-    <p class="name"><i class="fa fa-user"></i> Bryan</p>
-    <div class ="button">
-      <ul>
-        <li><button class="like"><i class="fa fa-thumbs-up"></i> 16 LIKE</button></li>
-        <li><button class="join"><i class="fa fa-child"></i> JOIN</button></li>
-        <li><p>11 People Are Going</p></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="list" style="background-image: url(http://i.imgur.com/y4O5c5m.jpg)"></div>
-    <p class="text">Fly In A Hot Air Baloon</p>
-    <p class="name"><i class="fa fa-user"></i> Amanda</p>
-    <div class ="button">
-      <ul>
-        <li><button class="like"><i class="fa fa-thumbs-up"></i> 14 LIKE</button></li>
-        <li><button class="join"><i class="fa fa-child"></i> JOIN</button></li>
-        <li><p>15 People Are Going</p></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="container tall">
-    <div class="list" style="background-image: url(http://i.imgur.com/jxWjiNn.png)"></div>
-    <p class="text">See The Grand Prismatic Spring At Yellowstone National Park</p>
-    <p class="name"><i class="fa fa-user"></i> Troy</p>
-    <div class ="button">
-      <ul>
-        <li><button class="like"><i class="fa fa-thumbs-up"></i> 12 LIKE</button></li>
-        <li><button class="join"><i class="fa fa-child"></i> JOIN</button></li>
-        <li><p>8 People Are Going</p></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="container tall">
-    <div class="list" style="background-image: url(http://poesypluspolemics.files.wordpress.com/2013/08/434ea2429dac3a7647df1d5e3eec99a41.jpg)"></div>
-    <p class="text">See General Sherman Tree (Largest Living Tree In The World)</p>
-    <p class="name"><i class="fa fa-user"></i> Anthony</p>
-    <div class ="button">
-      <ul>
-        <li><button class="like"><i class="fa fa-thumbs-up"></i> 11 LIKE</button></li>
-        <li><button class="join"><i class="fa fa-child"></i> JOIN</button></li>
-        <li><p>10 People Are Going</p></li>
-      </ul>
-    </div>
-  </div>
-
-
- <div class="container">
-    <div class="list" style="background-image: url(http://gifsforum.com/images_new/gif/other/grand/fcd30f426e8349cd84f5088083382132.gif)"></div>
-    <p class="text">Try Water Hoverboard</p>
-    <p class="name"><i class="fa fa-user"></i> John</p>
-    <div class ="button">
-      <ul>
-        <li><button class="like"><i class="fa fa-thumbs-up"></i> 10 LIKE</button></li>
-        <li><button class="join"><i class="fa fa-child"></i> JOIN</button></li>
-        <li><p>14 People Are Going</p></li>
-      </ul>
-    </div>
- </div>
-
- <div class="container">
-    <div class="list" style="background-image: url(http://gifsforum.com/images_new/gif/other/grand/c2acaa7d1fd1ec5fc3c0ee5209137465.gif)"></div>
-    <p class="text">Do Slip and Slide Off A Cliff</p>
-    <p class="name"><i class="fa fa-user"></i> Robert</p>
-    <div class ="button">
-      <ul>
-        <li><button class="like"><i class="fa fa-thumbs-up"></i> 10 LIKE</button></li>
-        <li><button class="join"><i class="fa fa-child"></i> JOIN</button></li>
-        <li><p>15 People Are Going</p></li>
-      </ul>
-    </div>
-  </div>
-
-
-  <div class="container">
-    <div class="list" style="background-image: url(http://www.pinnacleworldwide.co.uk/assets/images/Major_Cities/Las_Vegas/las_vegas_sign_2.jpg)"></div>
-    <p class="text">Go On A Road Trip To Las Vegas</p>
-    <p class="name"><i class="fa fa-user"></i> Bruno</p>
-    <div class ="button">
-      <ul>
-        <li><button class="like"><i class="fa fa-thumbs-up"></i> 8 LIKE</button></li>
-        <li><button class="join"><i class="fa fa-child"></i> JOIN</button></li>
-        <li><p>10 People Are Going</p></li>
-      </ul>
-    </div>
-  </div>
-
- <div class="container">
-    <div class="list" style="background-image: url(http://i.imgur.com/lJNJwr0.jpg)"></div>
-    <p class="text">Experience A Dog Sled Ride</p>
-    <p class="name"><i class="fa fa-user"></i> Chris</p>
-    <div class ="button">
-      <ul>
-        <li><button class="like"><i class="fa fa-thumbs-up"></i> 6 LIKE</button></li>
-        <li><button class="join"><i class="fa fa-child"></i> JOIN</button></li>
-        <li><p>10 People Are Going</p></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="list" style="background-image: url(http://data.whicdn.com/images/7212613/underwater,dolphins,girl,kiss,photography,dolphin-15004b00d93811968b911234e06ff258_h_large.jpg)"></div>
-    <p class="text">Swim With Wild Doplhins</p>
-    <p class="name"><i class="fa fa-user"></i> Melanie</p>
-    <div class ="button">
-      <ul>
-        <li><button class="like"><i class="fa fa-thumbs-up"></i> 5 LIKE</button></li>
-        <li><button class="join"><i class="fa fa-child"></i> JOIN</button></li>
-        <li><p>6 People Are Going</p></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="list" style="background-image: url(http://2.bp.blogspot.com/-pgrrNzERSEo/UwzRiMjnM0I/AAAAAAAAAHA/bJ59yRZxaQY/s1600/NSA-apple-ios-hacking.jpg)"></div>
-    <p class="text">Hack NSA Security System</p>
-    <p class="name"><i class="fa fa-user"></i> Unknown</p>
-    <div class ="button">
-      <ul>
-        <li><button class="like"><i class="fa fa-thumbs-up"></i> 1 LIKE</button></li>
-        <li><button class="join"><i class="fa fa-child"></i> JOIN</button></li>
-        <li><p>2 People Are Going</p></li>
-
-      </ul>
-    </div>
-  </div>
+  <% end %>
 
 </div>

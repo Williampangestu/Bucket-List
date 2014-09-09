@@ -1,12 +1,4 @@
-<div class="navcontainer">
-  <ul>
-    <li><h1 id="logo"><i class="fa fa-bitbucket"></i> DREAM BUCKET</h1></li>
-    <li><button id="user"><i class="fa fa-user"></i> </button></li>
-    <li><button id="home"><i class="fa fa-home"></i></button></li>
-    <li><button id ="sign_out">SIGN OUT</button></li>
-  </ul>
-</div>
-
+<%=erb :_navbar, locals: {user: @user}%>
 
 <div class="profile_content goals">
   <h1 id="my_goals">My Goals<h1>
