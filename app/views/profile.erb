@@ -1,46 +1,34 @@
 <%=erb :_navbar, locals: {user: @user}%>
 
-<div class="profile_content goals">
+<div id="<%=@user.id%>" class="profile_content goals">
   <h1 id="my_goals">My Goals<h1>
   <ul>
-    <li><a href=""><i class="fa fa-check-square-o"></a></i>&nbspAttend Dev Bootcamp</li>
-    <li><a href=""><i class="fa fa-square-o"></a></i>&nbsp  Milk A Cow</li>
-    <li><a href=""><i class="fa fa-square-o"></a></i>&nbsp  Save A Life</li>
-    <li><a href=""><i class="fa fa-square-o"></a></i>&nbsp  Ride In A Submarine</li>
-    <li><a href=""><i class="fa fa-square-o"></a></i>&nbsp  Play With Baby Pandas</li>
-    <li><a href=""><i class="fa fa-square-o"></a></i>&nbsp  Volunteer at An Animal Shelter</li>
-    <li><a href=""><i class="fa fa-square-o"></a></i>&nbsp  See the Northern Lights Aurora</li>
-    <li><a href=""><i class="fa fa-square-o"></a></i>&nbsp  Watch Ellen DeGeneres Show Live</li>
-    <li><a href=""><i class="fa fa-square-o"></a></i>&nbsp  Stand On Top Of Empire State Building</li>
+    <li><a href="/users/<%=@user.id%>/completes"><i class="fa fa-check-square-o"></i></a>&nbsp Attend Dev Bootcamp</li>
+    <li><a href="/users/<%=@user.id%>/completes"><i class="fa fa-square-o"></i></a>&nbsp Milk A Cow</li>
+    <li><a href="/users/<%=@user.id%>/completes"><i class="fa fa-square-o"></i></a>&nbsp Save A Life</li>
+    <li><a href="/users/<%=@user.id%>/completes"><i class="fa fa-square-o"></i></a>&nbsp Ride In A Submarine</li>
+    <li><a href="/users/<%=@user.id%>/completes"><i class="fa fa-square-o"></i></a>&nbsp Play With Baby Pandas</li>
+    <li><a href="/users/<%=@user.id%>/completes"><i class="fa fa-square-o"></i></a>&nbsp Volunteer at An Animal Shelter</li>
+    <li><a href="/users/<%=@user.id%>/completes"><i class="fa fa-square-o"></i></a>&nbsp See the Northern Lights Aurora</li>
+    <li><a href="/users/<%=@user.id%>/completes"><i class="fa fa-square-o"></i></a>&nbsp Watch Ellen DeGeneres Show Live</li>
+    <li><a href="/users/<%=@user.id%>/completes"><i class="fa fa-square-o"></i></a>&nbsp Stand On Top Of Empire State Building</li>
+
   </ul>
 </div>
 
 <div class="profile_content new">
   <h1 class="username">WILLIAM</h1>
-  <div class="info">
+  <div data-id="<%=@user.id%>" class="info">
     <ul>
       <li class="goal">Goals</br> 9</li>
       <li class="completed">Completed 1</li>
       <li class="following">Following 12</li>
       <li class="followers">Followers 10</li>
     </ul>
-    <button class="add">Add Goal</button>
-
-<!--     <form class="newgoal didit">
-      <input type ="text" name="title" placeholder="Title">
-      <input type ="text" name="picture" placeholder="Picture Url">
-      <input type ="text" name="description" placeholder="Description">
-      <input type ="text" name="location" placeholder="Location">
-      <input type ="submit" value="ADD IT">
-    </form> -->
-
- <!--    <form class="newgoal didit">
-      <h1 class="done">Congratulations! You Did It!</h1>
-      <input type ="text" name="picture" placeholder="Share your picture">
-      <input type ="text" name="description" placeholder="Tell us how you did it">
-      <input type ="text" name="location" placeholder="Where were you?">
-      <input type ="submit" value="DID IT">
-    </form> -->
-
+    <a href="/users/<%=@user.id%>/goals/new"><button class="add">Add Goal</button></a>
   </div>
+
+  <form></form>
+
+
 </div>

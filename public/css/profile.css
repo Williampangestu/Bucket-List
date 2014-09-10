@@ -31,7 +31,7 @@ a {
 .goals ul {
   list-style-type: none;
   margin-left: -2%;
-  font-size: 30px;
+  font-size: 31px;
 }
 
 .profile_content {
@@ -50,7 +50,7 @@ a {
 .username{
   text-align: center;
   font-family: 'Racing Sans One', cursive;
-  font-size: 60px;
+  font-size: 70px;
   margin-top: 1%;
   margin-bottom: 1%;
 }
@@ -98,6 +98,7 @@ a {
   margin-top: 3%;
   width: 90%;
   margin-left: 6.5%;
+  color: #33ADFF;
   /*border: 1px solid black;*/
 
 }
@@ -119,7 +120,7 @@ a {
  background-color: #33ADFF;
  border: 2px solid black;
  padding: 1.5%;
- color: #000000;
+ color: #FFFFFF;
 }
 
 .done {

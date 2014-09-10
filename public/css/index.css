@@ -70,7 +70,7 @@ input {
   padding: 5px;
 }
 
-#quote {
+.quote_div {
   float: right;
   /*margin-right: 130px;*/
   margin-right: 110px;

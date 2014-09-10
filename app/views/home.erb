@@ -7,7 +7,7 @@
 <div class="content">
 
   <%@goal.each do |goal|%>
-    <div id="<%=goal.id%>" class="container">
+    <div id="<%=goal.id%>" class="<%=@user.id%> container">
       <div class="list" style="background-image: url(<%=goal.picture%>)"></div>
       <p class="text"><%=goal.title%></p>
       <p class="name"><i class="fa fa-user"></i> <%=goal.creator%></p>
@@ -15,7 +15,7 @@
         <ul>
           <li><button class="like"><i class="fa fa-thumbs-up"></i> <%=goal.likes%></button></li>
           <li><button class="join"><i class="fa fa-child"></i> JOIN</button></li>
-          <li><p><%=goal.users.count%> People Are Going</p></li>
+          <li><%=goal.users.count%> People Are Going</li>
         </ul>
       </div>
     </div>

@@ -1,3 +1,7 @@
+button:focus {
+  outline: none;
+}
+
 #logo {
   margin-right: 550px;
   font-family: 'Racing Sans One', cursive;
@@ -67,15 +71,15 @@
 }
 
 .content {
-  margin-left: 5.2%;
+  margin-left: 5.1%;
   /*border: 2px solid black;*/
 }
 
 .container {
   border: 3px solid black;
-  background-color: #F7F7F7;
-  height: 565px;
-  width: 620px;
+  background-color: #F5F5F5;
+  height: 35.313em;
+  width: 38.750em;
   margin-left: 0%;
   margin-right: 3.0%;
   margin-bottom: 8%;
@@ -102,7 +106,7 @@
   font-size: 20px;
   font-family: 'Changa One', cursive;
   color: #33ADFF;
-
+  margin-bottom: 5%;
 }
 
 .list {
