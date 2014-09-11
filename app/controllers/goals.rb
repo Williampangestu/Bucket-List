@@ -18,6 +18,12 @@ get '/users/:user_id/goals/completes' do
   erb :_complete_form, layout: false
 end
 
+get '/users/:user_id/goals/:id' do
+  @user = User.find(params[:user_id])
+  @goal = Goal.find(params[:id])
+  erb :goal
+end
+
 get '/users/:user_id/newgoal' do
   @user = User.find(params[:user_id])
   erb :_new_form, locals: {user: @user}
@@ -25,7 +31,6 @@ end
 
 post '/users/:user_id/goals/new' do
   title = params[:title]
-  p params
   content_type :json
   {title: title}.to_json
 end

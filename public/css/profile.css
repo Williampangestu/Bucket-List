@@ -86,7 +86,6 @@ a {
   margin-left: 42%;
   margin-bottom: 4%;
   padding: 1.5%;
-  background-color: #FFFFFF;
   background-color: #33ADFF;
   font-size: 22px;
   font-family: 'Chewy', cursive;
@@ -94,13 +93,31 @@ a {
   border-radius: 5px;
 }
 
+.followlist {
+  border: 3px solid black;
+  border-radius: 5px;
+  font-family: 'Chewy', cursive;
+  font-size: 20px;
+  width: 28%;
+  margin-top: 3%;
+  margin-left: 34.5%;
+  padding-left: 4%;
+  line-height: 29px;
+  display: none;
+  /*background-color: #33ADFF;*/
+}
+
+.followlist ul {
+  /*list-style-type: none;*/
+}
+
 .newgoal {
   margin-top: 3%;
   width: 90%;
   margin-left: 6.5%;
   color: #33ADFF;
+  display: none;
   /*border: 1px solid black;*/
-
 }
 
 .newgoal input[type=text]{
@@ -120,7 +137,7 @@ a {
  background-color: #33ADFF;
  border: 2px solid black;
  padding: 1.5%;
- color: #FFFFFF;
+ color: #000000;
 }
 
 .done {

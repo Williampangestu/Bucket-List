@@ -5,6 +5,10 @@ $(document).ready(function() {
     $(".join").on("click", incrementParticipant)
     $(".fa-square-o").on("click", completeGoal)
     $(".add").on("click", addNewForm)
+    $(".followings").on("click", showFollowings)
+    $(".followers").on("click", showFollowers)
+    $(".hidefollowings").on("click", hideFollowings)
+    $(".hidefollowers").on("click", hideFollowers)
   }
 
   function incrementLike(event) {
@@ -51,6 +55,7 @@ $(document).ready(function() {
       type: 'get'
     })
     .done(function(data){
+      $(window).hide('slow')
       $complete.parent().append(data)
       $complete.parent().find('i').eq(0).remove()
     })
@@ -69,7 +74,8 @@ $(document).ready(function() {
     })
     .done(function(data){
       $add.remove()
-      $('.new').append(data)
+      $(data).appendTo('.new')
+      $('.newgoal').show(1000)
       $('.newgoal').on("submit", addGoal)
     })
     .fail(function(){
@@ -90,6 +96,68 @@ $(document).ready(function() {
       $('.goals').find('ul').append(template)
       $('.newgoal').remove()
       $('.new').append("<button class='add'>Add Goal</button>")
+    })
+    .fail(function(){
+      console.log("You Failed!")
+    })
+  }
+
+  function showFollowers(event) {
+    event.preventDefault();
+    var id = $(this).parents('div').data("id")
+    $.ajax({
+      url: "/users/" +id+ "/followers",
+      type: "get",
+    })
+    .done(function(data){
+      $('.new').append(data)
+      $('.followlist').slideToggle(1000)
+    })
+    .fail(function(){
+      console.log("You Failed!")
+    })
+  }
+
+  function showFollowings(event) {
+    event.preventDefault();
+    var id = $(this).parents('div').data("id")
+    $.ajax({
+      url: "/users/" +id+ "/followings",
+      type: "get",
+    })
+    .done(function(data){
+      $('.new').append(data)
+      $('.followlist').slideToggle(1000)
+    })
+    .fail(function(){
+      console.log("You Failed!")
+    })
+  }
+
+  function hideFollowers(event) {
+    event.preventDefault();
+    var id = $(this).parents('div').data("id")
+    $.ajax({
+      url: "/users/" +id+ "/followers/delete",
+      type: "get",
+    })
+    .done(function(data){
+      $('.followlist').remove()
+    })
+    .fail(function(){
+      console.log("You Failed!")
+    })
+  }
+
+  function hideFollowings(event) {
+    event.preventDefault();
+    var id = $(this).parents('div').data("id")
+    $.ajax({
+      url: "/users/" +id+ "/followings/delete",
+      type: "get",
+    })
+    .done(function(data){
+      $('.followlist').remove()
     })
     .fail(function(){
       console.log("You Failed!")

@@ -21,7 +21,7 @@ def populate_goals
   Goal.create(creator: "Amanda", title: "Fly In A Hot Air Baloon", description: "", location:"603 California Blvd, Napa, CA", likes:"11",picture:"http://i.imgur.com/y4O5c5m.jpg")
   Goal.create(creator: "Troy", title: "See The Grand Prismatic Spring", description: "", location:"Yellowstone National Park, CA", likes:"10",picture:"http://i.imgur.com/jxWjiNn.png")
   Goal.create(creator: "Anthony", title: "See The Largest Tree In The World", description: "", location:"Three Rivers, CA", likes:"10",picture:"http://poesypluspolemics.files.wordpress.com/2013/08/434ea2429dac3a7647df1d5e3eec99a41.jpg")
-  Goal.create(creator: "John", title: "Try Water Hoverboard", description: "This futuristic surfboard combines the experience of flying and surfing. The 59-foot hose attaches to a personal watercraft (like a speed boat or JetSki), then propels the Hoverboard into the air by a powerful jet of water. It can reach speeds of up to 23 miles per hour and heights up to 16 feet above the water. I have been dreaming to try this awesome invention since the beginning of summer this year. Let’s do it guys!", location:"3400 Pan American Drive, Dinner Key Marina Pier 9 Slip 36, Miami, FL 33133", likes:"10",picture:"http://gifsforum.com/images_new/gif/other/grand/fcd30f426e8349cd84f5088083382132.gif")
+  Goal.create(creator: "John", title: "Try Water Hoverboard", description: "This futuristic surfboard combines the experience of flying and surfing. The 59-foot hose attaches to a personal watercraft (like a speed boat or Jetski), then propels the Hoverboard into the air by a powerful jet of water. It can reach speeds of up to 23 miles per hour and heights up to 16 feet above the water. I have been dreaming to try this awesome invention since the beginning of summer this year. Let’s do it guys!", location:"3400 Pan American Drive, Miami, FL 33133", likes:"10",picture:"http://gifsforum.com/images_new/gif/other/grand/fcd30f426e8349cd84f5088083382132.gif")
   Goal.create(creator: "Robert", title: "Do Slip and Slide Off A Cliff", description: "", location:"Lake Havasu City, Arizona", likes:"9",picture:"http://gifsforum.com/images_new/gif/other/grand/c2acaa7d1fd1ec5fc3c0ee5209137465.gif")
   Goal.create(creator: "Bruno", title: "Go On A Road Trip To Las Vegas", description: "", location:"Las Vegas, Nevada", likes:"8",picture:"http://www.pinnacleworldwide.co.uk/assets/images/Major_Cities/Las_Vegas/las_vegas_sign_2.jpg")
   Goal.create(creator: "Chris", title: "Experience A Dog Sled Ride", description: "", location:" 12820 Old Exit Glacier Rd, Seward, AK 99664", likes:"6",picture:"http://i.imgur.com/lJNJwr0.jpg")
@@ -30,9 +30,10 @@ def populate_goals
 end
 
 def populate_followers_followees
-  users = [User.find(2), User.find(3), User.find(4), User.find(5), User.find(6), User.find(7), User.find(8), User.find(9), User.find(10), User.find(11), User.find(12), User.find(13)]
-  User.find(1).followers.push(*users)
-  User.find(1).followees.push(*users)
+  followers = [User.find(2), User.find(3), User.find(4), User.find(5), User.find(6), User.find(7), User.find(8), User.find(9), User.find(10), User.find(11), User.find(12), User.find(13)]
+  followings = [User.find(3), User.find(4), User.find(5), User.find(6), User.find(7), User.find(8), User.find(9), User.find(10), User.find(11), User.find(12),]
+  User.find(1).followers.push(*followers)
+  User.find(1).followees.push(*followings)
 end
 
 def populate_goals_accomplisher

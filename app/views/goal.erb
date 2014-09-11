@@ -1,0 +1,56 @@
+<body class="screen">
+<%=erb :_navbar, locals: {user: @user}%>
+
+<div class="polaroid">
+  <div class="container">
+   <div class="list" style="background-image: url(<%=@goal.picture%>)"></div>
+    <p class="text"><%=@goal.title%></p>
+    <p class="name"><i class="fa fa-user"></i> <%=@goal.creator%></p>
+  </div>
+</div>
+
+<div class = "description">
+  <h2>Description:</h2>
+  <p><%=@goal.description%></p>
+</div>
+
+<p class="location"><i class="fa fa-map-marker"> <%=@goal.location%></i></p>
+
+<div id="maps">
+
+</div>
+
+<div class ="bigbutton">
+  <ul>
+    <li><button class="biglike"><i class="fa fa-thumbs-up"></i> <%=@goal.likes%></button></li><br><br>
+    <li><button class="bigjoin"><i class="fa fa-child"></i> &nbsp<%=@goal.users.count%></button></li>
+  </ul>
+</div>
+
+<script type="text/javascript">
+
+  var address = $('.location').text();
+
+  var map = new google.maps.Map(document.getElementById('maps'), {
+     mapTypeId: google.maps.MapTypeId.ROADMAP,
+     zoom: 11
+  });
+
+  var geocoder = new google.maps.Geocoder();
+
+  geocoder.geocode({
+    'address': address
+  },
+  function(results, status) {
+    if(status == google.maps.GeocoderStatus.OK) {
+       new google.maps.Marker({
+          position: results[0].geometry.location,
+          map: map
+       });
+       map.setCenter(results[0].geometry.location);
+    }
+  });
+
+</script>
+
+</body>

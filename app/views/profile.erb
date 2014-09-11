@@ -1,3 +1,4 @@
+<body class="screen">
 <%=erb :_navbar, locals: {user: @user}%>
 
 <div id="<%=@user.id%>" class="profile_content goals">
@@ -22,8 +23,8 @@
     <ul>
       <li class="goal">Goals</br> 9</li>
       <li class="completed">Completed 1</li>
-      <li class="following">Following 12</li>
-      <li class="followers">Followers 10</li>
+      <li><a class="followings" href="/users/<%=@user.id%>/followings">Following</a> <a class="hidefollowings" href="/users/<%=@user.id%>/followings/delete"><%=@user.followees.count%></a></li>
+      <li><a class="followers" href="/users/<%=@user.id%>/followers">Followers</a> <a class="hidefollowers" href="/users/<%=@user.id%>/followers/delete"><%=@user.followers.count%></a></li>
     </ul>
     <a href="/users/<%=@user.id%>/goals/new"><button class="add">Add Goal</button></a>
   </div>
@@ -32,3 +33,5 @@
 
 
 </div>
+
+</body>

@@ -1,3 +1,4 @@
+<body class="screen">
 <%=erb :_navbar, locals: {user: @user}%>
 
 <div class="navbar">
@@ -8,7 +9,7 @@
 
   <%@goal.each do |goal|%>
     <div id="<%=goal.id%>" class="<%=@user.id%> container">
-      <div class="list" style="background-image: url(<%=goal.picture%>)"></div>
+      <a href="/users/<%=@user.id%>/goals/<%=goal.id%>"><div class="list" style="background-image: url(<%=goal.picture%>)"></div></a>
       <p class="text"><%=goal.title%></p>
       <p class="name"><i class="fa fa-user"></i> <%=goal.creator%></p>
       <div class ="button">
@@ -22,3 +23,5 @@
   <% end %>
 
 </div>
+
+</body>
